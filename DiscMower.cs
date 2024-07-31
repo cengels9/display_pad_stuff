@@ -5,6 +5,7 @@ using DisplayPad.SDK;
 using System.IO;
 
 /// <summary>
+/// DiscordMover
 /// A discord bot, that quickly moves users from channel to channel with the press of a button
 /// </summary>
 public class DiscMower : ScreenState {
