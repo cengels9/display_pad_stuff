@@ -18,35 +18,38 @@ For that you can refer to the following files:\
 
 Feel free to ask me any questions
 
-### Use this projekt like I do
+### Use this project like I do
 I created the program to bind funtionality to the displaypad.
 This functionality revolves around two things: Moving people along voice channels using a discord bot and playing audio clips.
 I understand that this are very distinct aund niche things, so I doubt that anyone would want do the same with their displaypad.
 But in case anyone does, I will describe how to do that in the following.
 
 First of all, you can of course do only one of those two things with this software and safely ignore the rest.
-###### Layout
+##### Layout
 Configuring the button layout is done via a directory, which, in this case is [this](https://github.com/cengels9/display_pad_stuff/tree/main/Sounds).
 That is the base directory for the layout.
 It's parent directory should be the first program argument.
 To that directory you can add files and subdirectories.
 Each of that entity corresponds to one button on the display pad (after you pressed the first button, all options of the base directory will be drawn to the displaypad).
-They have to conform to the RegExes specified [here](https://github.com/cengels9/display_pad_stuff/blob/main/SoundScreen.cs), which means they will follow this format: `index`_`name`.`file ending`.\
+They have to conform to the RegExes specified [here](https://github.com/cengels9/display_pad_stuff/blob/main/SoundScreen.cs), which means they will follow this format: `<index>_<name><file ending>`.\
 `index` ranges from 0 to 11 and specifies which button on the diplaypad is referred by the file.\
 `name` is the string that will be written to the displaypad.\
 `file ending` specifies what should be done, when the button is pressed. There are several options for this:
 * `_sounds` (only for directories) Clicking the corresponding button will draw all options of the subdirectory to the display pad.
-* `.back` return to the previous state (usually the parent-directory) (the file's content does not matter)
-* `.sync` scan for changed files and directories in the current directory or any subdirectory and update the button images accordingly (the file's content does not matter).
-* `.wav` or `.mp3` play the sound of the file to the specified outputs see more below
+* `.back` return to the previous state (usually the parent-directory)
+* `.sync` scan for changed files and directories in the current directory or any subdirectory and update the button images accordingly.
+* `.wav` or `.mp3` (capitalization does not matter) play the aufio clip to the specified outputs (see more [here](https://github.com/cengels9/display_pad_stuff/blob/main/README.md#how-do-i-specify-sound-outputs))
 * `.dNew` transfers you to a discord-move-bot-control-panel:
-  1. Select a token from a token file if there is no such file, the program will create such a file and promt you to enter your token (Where do you get a token? - Go [here](https://discord.com/developers/applications), create an application, and a bot for your application, copy its token and add the bot to your server). You can select from multiple tokens by creating multiple token files.
+  1. Select a token from a token file if there is no such file, the program will create such a file and promt you to enter your token (Where do you get a token? - Go [here](https://discord.com/developers/applications), create an application, and a bot for your application, copy its token and add the bot to your server). You can select from multiple tokens/bots by creating multiple token files.
   2. Select on which discord server you want to agitate (only necessary if the bot is connected to multiple servers)
   3. Select two voice channels on that server
   4. At next, the displaypad will draw all server members that are currently connected to the voice chat. One person per button (so not more than 12 people). The text color changes depending on the channel the person is connected to. Clicking a person-button moves the person to a different channel (one of those specified in step 3). Clicking on a person while already holding an other button will move every person to that voice-channel. Clicking on a person while already holding two other buttons will move every person to the first specified voice channel.
 * `.dOld` Does the same as `.dNew`, it just skips the steps 1 - 3, if you already performed them at least once.
 
-##### how do I specify sound outputs?
+The file's contents do not matter (except of course the contens of the `.mp3` and `.wav` files).
+Any file not matching any regex will be ignored.
+
+##### How do I specify sound outputs?
 Clicking a sound-playback-button will play a sound.
 The second, third, fourth and fivth program arguments specify to which output the sound will be played.
 The second and fourth argument are substrings contained in the output's name.
@@ -54,7 +57,12 @@ The third and fivth argument are volume multiplicators for the corresponding out
 I specified two outputs for myself: My default audio-output (for monitoring) and [Voicemeeter](https://vb-audio.com/Voicemeeter/). 
 Voicemeeter allows you to map an audio output to an audio input, which means, that you can use the displaypad as a soundboard (if you use the voicemeeter as microphone input).
 
+##### The font is ugly
+Yes, I know. You can change it by replacing/editing [this file](https://github.com/cengels9/display_pad_stuff/blob/main/Letter.cs). 
+
 For this chapter also:\
-Feel free to ask me any questions
+Feel free to ask me any questions, if you have any
+
+
 
 
