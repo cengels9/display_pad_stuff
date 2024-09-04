@@ -9,9 +9,9 @@ I added the project to GitHub, so other people can use it as a foundation for th
 
 ## Use this project as a guideline
 You can use this project as a more sufficient alternative demo compared to Mountain's own [demo](https://github.com/Mountain-BC/DisplayPad.SDK.Demo).
-For that you can refer to the following files:\
+For that you can refer to the following files:
 * __Letter.cs:__ This class only creates bmp-images from text input. This is not relevant for you, like all other classes, except the following two:
-* __Program.cs:__ The program is basically a state machine. In this file you can see how I registered the three event listeners (you have to add all three, even if you only need one, hence the two empty methods) and delegate the onClick-events to the state machine.\
+* __Program.cs:__ The program is basically a state machine. In this file you can see how I registered the three event listeners (you have to add all three, even if you only need one, hence the two empty methods) and delegate the onClick-events to the state machine.
 * __Utils.cs:__ This file shows you, how to output a picture to the display pad. The method `UploadImageBySetIconPic` does that. It gets as input:
   - a deviceId (to differentiate multiple DisplayPads (but I only have one DisplayPad, so I don't know whether that would actually work))
   - a filepath to a `.bmp`-file (The picture you want to show on the pad. The resolution does not matter, it will be scaled accordingly. I did not find a method that accepts the data directly, so you will have to write everything to a file first.)
