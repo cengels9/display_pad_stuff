@@ -31,7 +31,7 @@ I understand that this are very distinct aund niche things, so I doubt that anyo
 But in case anyone does, I will describe how to do that in the following.
 
 First of all, you can of course do only one of those two things with this software and safely ignore the rest.
-#### Layout
+### Layout
 Configuring the button layout is done via a directory, which, in this case is [this](https://github.com/cengels9/display_pad_stuff/tree/main/Sounds).
 That is the base directory for the layout.
 It's parent directory should be the first program argument.
@@ -55,7 +55,7 @@ They have to conform to the RegExes specified [here](https://github.com/cengels9
 The file's contents do not matter (except of course the contens of the `.mp3` and `.wav` files).
 Any file not matching any regex will be ignored.
 
-#### How do I specify sound outputs?
+### How do I specify sound outputs?
 Clicking a sound-playback-button will play a sound.
 The second, third, fourth and fivth program arguments specify to which output the sound will be played.
 The second and fourth argument are substrings contained in the output's name.
@@ -63,7 +63,7 @@ The third and fivth argument are volume multiplicators for the corresponding out
 I specified two outputs for myself: My default audio-output (for monitoring) and [Voicemeeter](https://vb-audio.com/Voicemeeter/). 
 Voicemeeter allows you to map an audio output to an audio input, which means, that you can use the displaypad as a soundboard (if you use the voicemeeter as microphone input).
 
-#### The font is ugly
+### The font is ugly
 Yes, I know. You can change it by replacing/editing [this file](https://github.com/cengels9/display_pad_stuff/blob/main/Letter.cs). 
 
 For this chapter also:\
